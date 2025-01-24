@@ -2,92 +2,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZQS</title>
-    <style>
-        body {
-            font-family: 'Roboto Mono', monospace; /* Modern monospace font */
-            margin: 0;
-            background: linear-gradient(135deg, #1c1c1c, #0d0d0d); /* Dark gradient background */
-            color: #e0e0e0; /* Off-white text for better contrast */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center; /* Center horizontally */
-            min-height: 100vh;
-            overflow: hidden; /* Hide potential scrollbars from animation */
-        }
-
-        h1 {
-            font-size: 2.5em; /* Slightly smaller for better balance */
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(0, 173, 181, 0.5); /* Subtle glow */
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #00adb5; /* Teal/cyan link color */
-            text-decoration: none;
-            transition: color 0.3s ease; /* Smooth color transition on hover */
-        }
-
-        a:hover {
-            color: #0077b6; /* Darker teal on hover */
-        }
-
-        /* Animated background lines */
-        .bg-lines {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place behind content */
-            overflow: hidden;
-        }
-
-        .bg-lines span {
-            position: absolute;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, #00adb5); /* Gradient lines */
-            animation: moveLines 15s linear infinite; /* Adjust speed as needed */
-        }
-
-        @keyframes moveLines {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-
-        /* Generate random line positions */
-        .bg-lines span:nth-child(1) { left: 10%; }
-        .bg-lines span:nth-child(2) { left: 25%; animation-delay: 1s;}
-        .bg-lines span:nth-child(3) { left: 40%; animation-delay: 2s;}
-        .bg-lines span:nth-child(4) { left: 55%; animation-delay: 0.5s;}
-        .bg-lines span:nth-child(5) { left: 70%; animation-delay: 1.5s;}
-        .bg-lines span:nth-child(6) { left: 85%; animation-delay: 2.5s;}
-        /* Add more spans as needed */
-
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, sans-serif;
+      text-align: center;
+    }
+    .container {
+      margin-top: 60px;
+    }
+    .assembly {
+      font-size: 2em;
+      font-weight: bold; 
+    }
+    .normal-text {
+      font-size: 1.1em;
+      margin: 0.6em 0;
+      font-weight: 400; 
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="bg-lines">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+  <div class="container">
+    <div class="assembly">ZQS.com</div>
+    <div class="normal-text">Reserved for Future Use</div>
+    <div class="normal-text" id="email-container"></div>
+  </div>
 
-    <h1>Serious Inquiries Only</h1>
-    <p>Contact: <a href="mailto:support@zqs">support@ZQS.com</a></p>
+  <script>
+    const localPart = "support";
+    const domain = "zqs";
+    const tld = "com";
 
+    const emailAddress = localPart + "@" + domain + "." + tld;
+    const mailtoLink = "mailto:" + emailAddress;
+
+    const link = document.createElement("a");
+    link.href = mailtoLink;
+    link.textContent = emailAddress;
+
+    document.getElementById("email-container").appendChild(link);
+  </script>
 </body>
 </html>
